@@ -1,0 +1,50 @@
+Proceso Matriz
+	
+	Definir fila, columna, matriz1, i, j, g, a Como Entero;
+	Dimension matriz1[4,5];
+	
+	i<-1;
+	g <- 1;
+	
+	para fila <- 0 Hasta 3 con paso 1 Hacer
+		para columna<- 0 hasta 4 Con Paso 1 Hacer
+			Si g<10 Entonces
+				Escribir "0",g, " " Sin Saltar;
+				g <- g+1;
+			SiNo
+				Escribir g, " " Sin Saltar;
+				g <- g+1;
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	Para fila <- 0 Hasta 3 Con Paso 1 Hacer
+		Si fila = 1 O fila = 3 Entonces
+			Para columna <- 4 Hasta 0 Con Paso -1 Hacer
+					matriz1[fila,columna] <- i;
+					i<-i+1;							
+			FinPara
+		SiNo
+			Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+			matriz1[fila,columna] <- i;
+			i <- i +1;
+			FinPara
+		FinSi
+	FinPara
+	
+	Escribir "Presione enter para mostrar resultado";
+	leer a;
+	
+	para fila <-0 Hasta 3 con paso 1 Hacer
+		para columna<-0 hasta 4 Con Paso 1 Hacer
+			Si matriz1[fila,columna]<10 Entonces
+				Escribir "0",matriz1[fila,columna], " " Sin Saltar;
+			SiNo
+				Escribir matriz1[fila,columna], " " Sin Saltar;
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+FinProceso

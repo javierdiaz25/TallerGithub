@@ -1,0 +1,45 @@
+Proceso Arreglo_Pares_Impares
+
+	Definir posiciones, i Como Entero;	
+	Dimension posiciones[20];
+
+	Para i <- 0 Hasta 19 Con Paso 1 Hacer
+		posiciones[i] <- Aleatorio(1,100);
+	FinPara
+	
+	i<- 0;
+
+	Escribir "Numeros pares: ", Sin Saltar;
+	
+	Mientras i <= 19 Hacer
+		
+		Si posiciones[i] MOD 2 = 0 Entonces
+			
+			Escribir posiciones[i], " , ", Sin Saltar;
+			
+		FinSi
+		
+		i <- i+1;
+		
+	FinMientras
+
+	i <- 0;
+
+	Escribir "";
+	Escribir "Numeros impares: " Sin Saltar;
+
+	Mientras i<= 19 Hacer
+		
+		Si posiciones[i] MOD 2 = 1 Entonces
+			
+			Escribir posiciones[i], " , ", Sin Saltar;
+			
+		FinSi
+		
+		i <- i+1;
+		
+	FinMientras
+	
+	Escribir "";
+	
+FinProceso

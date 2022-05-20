@@ -1,0 +1,21 @@
+Proceso Vector
+	
+	Definir posiciones, i Como Entero;	
+	Dimension posiciones[5];
+
+	para i <- 0 Hasta 4 Con Paso 1 Hacer
+		
+		Escribir "Ingrese posicion ", i;
+		Leer posiciones[i];
+		
+	FinPara
+	
+	Limpiar Pantalla;
+	
+	Para i <- 0 Hasta 4 Con Paso 1 Hacer
+		
+		Escribir "[", i, "] = ", posiciones[i];
+		
+	FinPara
+	
+FinProceso

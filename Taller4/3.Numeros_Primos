@@ -1,0 +1,31 @@
+Proceso Numeros_Primos
+	
+Definir posiciones, i, j, k Como Entero;	
+Dimension posiciones[1000];
+
+
+para i <- 0 Hasta 999 Con Paso 1 Hacer
+	
+	posiciones[i] <- i+1;
+	j <- 1;
+	k <- 0;
+	
+	Mientras j <= posiciones[i] Hacer
+		
+		si posiciones[i] mod j = 0 Entonces
+			
+			k <- k+1;
+			
+		FinSi
+		
+		j<-j+1;
+		
+	FinMientras
+	
+	si k = 2 Entonces
+		Escribir "el numero ", posiciones[i], " es primo";
+	FinSi
+	
+FinPara
+	
+FinProceso

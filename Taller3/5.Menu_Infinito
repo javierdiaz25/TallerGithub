@@ -1,0 +1,35 @@
+Proceso Menu_Infinito
+	
+	Definir Opcion Como Entero;
+	Definir Nombre Como Caracter;
+	
+	Opcion <- 1;
+	
+	Mientras Opcion <= 2 Hacer
+		
+		
+		
+		Escribir "Menu de usuario";
+		Escribir "1. Capturar Nombre";
+		Escribir "2. Saludar persona";
+		Escribir "3. Salir del sistema";
+		Leer Opcion;
+		
+		
+		Segun Opcion Hacer
+			1:
+				Escribir "Ingrese su nombre";
+				Leer Nombre;
+				Escribir Nombre, " su nombre ha sido guardado correctamente";
+				
+				
+			2:
+				Escribir "Ingrese su Nombre";
+				Leer Nombre;
+				Escribir "Hola ", Nombre;
+				
+		FinSegun
+		
+	FinMientras
+		
+FinProceso

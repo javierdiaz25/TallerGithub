@@ -1,0 +1,84 @@
+Proceso Ciclo_Hasta	
+	
+	Definir i, j, k, l Como Entero;
+	
+	i<-1;
+	k<-0;
+	l<-0;
+	
+	Repetir
+		j<-i;
+		Repetir
+			Escribir " " Sin Saltar;
+			j <- j+1;
+		Hasta Que j>11;
+		
+		Repetir
+			Escribir "*" Sin Saltar;
+			k<-k+1;
+		Hasta Que k>(2*l);
+		
+		Escribir "";
+		i<-i+1;
+		k<-0;
+		l<-l+1;
+		
+	Hasta Que i>11;
+	
+	Repetir
+		k<-0;
+		l<-1;
+		j<-0;
+		Repetir
+			Escribir " " Sin Saltar;
+			j<-j+1;
+		Hasta Que j>9;
+		
+		Repetir
+			Escribir "*" Sin Saltar;
+			k<-k+1;
+		Hasta Que k>(2*l);
+		
+		Escribir "";
+		i<-i+1;
+		j<-0;
+	Hasta Que i>13;
+	
+	Repetir
+		k<-0;
+		j<-0;
+		
+		Repetir
+			Escribir " " Sin Saltar;
+			j<-j+1;
+		Hasta Que j>(i-6);
+		
+		Repetir
+			Escribir "*" Sin Saltar;
+			k<-k+1;
+		Hasta Que k>(2*l)+2;
+		
+		Escribir "";
+		i<-i+1;
+	Hasta Que i>14;
+	
+	Repetir
+		k<-0;
+		l<-2;
+		j<-0;
+		
+		Repetir
+			Escribir " " Sin Saltar;
+			j<-j+1;
+		Hasta Que j>(i-8);
+		
+		Repetir
+			Escribir "*" Sin Saltar;
+			k<-k+1;
+		Hasta Que k>(2*l)+2;
+		
+		Escribir "";
+		i<-i+1;
+	Hasta Que i>15;
+	
+FinProceso

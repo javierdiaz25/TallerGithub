@@ -1,0 +1,374 @@
+Proceso Parqueadero
+	
+	Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, NombreCompleto4, NombreCompleto5, placa1, placa2, placa3, placa4, placa5, marca1, marca2, marca3, marca4, marca5, consultaPlaca Como Caracter;
+	Definir NumeroCel1, NumeroCel2, NumeroCel3, NumeroCel4, NumeroCel5, NumeroEliminar, Opcion, i, usuarioPermitido, OpcionEliminar Como Entero;
+	Definir Respuesta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 5;
+	NombreCompleto1 <- "";
+	NombreCompleto2 <- "";
+	NombreCompleto3 <- "";
+	NombreCompleto4 <- "";
+	NombreCompleto5 <- "";
+	placa1 <- "";
+	placa2 <- "";
+	placa3 <- "";
+	placa4 <- "";
+	placa5 <- "";
+	marca1 <- "";
+	marca2 <- "";
+	marca3 <- "";
+	marca4 <- "";
+	marca5 <- "";
+	consultaPlaca <- "";
+	NumeroCel1 <- 0;
+	NumeroCel2 <- 0;
+	NumeroCel3 <- 0;
+	NumeroCel4 <- 0;
+	NumeroCel5 <- 0;
+	
+	Mientras Opcion <= 3 Hacer
+		
+		Escribir "";
+		Escribir "Bienvenido, A continuacion elija una opcion";
+		
+		Escribir "1. Ingresar Vehiculo";
+		Escribir "2. Consultar Vehiculo";
+		Escribir "3. Retirar Vehiculo";
+		Escribir "4. Salir";
+		Leer Opcion;
+		
+		Segun Opcion Hacer
+			1:
+				Para i <- 1 hasta usuarioPermitido Hacer
+					
+					Escribir "Usuarios disponibles ", usuarioPermitido;
+					
+					Si i = 1 Y placa1 = "" Entonces
+						
+						Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+						Leer placa1;
+						
+						Mientras placa1 = placa2 O placa1 = placa3 o placa1 = placa4 o placa1 = placa5  Hacer
+							
+							Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+							Leer placa1;
+							
+						FinMientras
+						
+						Escribir "Ingrese marca del vehiculo";
+						Leer marca1;
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto1;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel1;
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 6;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 2 y placa2 = "" Entonces
+						
+						Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+						Leer placa2;
+						
+						Mientras placa1 = placa2 O placa2 = placa3 o placa2 = placa4 o placa2 = placa5  Hacer
+							
+							Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+							Leer placa2;
+							
+						FinMientras
+						
+						Escribir "Ingrese marca del vehiculo";
+						Leer marca2;
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto2;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel2;
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 6;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 3 y placa3 = "" Entonces
+						
+						Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+						Leer placa3;
+						
+						Mientras placa1 = placa3 O placa2 = placa3 o placa3 = placa4 o placa3 = placa5  Hacer
+							
+							Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+							Leer placa3;
+							
+						FinMientras
+						
+						Escribir "Ingrese marca del vehiculo";
+						Leer marca3;
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto3;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel3;
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 6;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 4 y placa4 = "" Entonces
+						
+						Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+						Leer placa4;
+						
+						Mientras placa1 = placa4 O placa4 = placa3 o placa2 = placa4 o placa4 = placa5  Hacer
+							
+							Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+							Leer placa4;
+							
+						FinMientras
+						
+						Escribir "Ingrese marca del vehiculo";
+						Leer marca4;
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto4;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel4;
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 6;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 5 y placa5 = "" Entonces
+						
+						Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+						Leer placa2;
+						
+						Mientras placa1 = placa5 O placa5 = placa3 o placa5 = placa4 o placa2 = placa5  Hacer
+							
+							Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+							Leer placa5;
+							
+						FinMientras
+						
+						Escribir "Ingrese marca del vehiculo";
+						Leer marca5;
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto5;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel2;
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+					FinSi
+					
+					Si usuarioPermitido = 0 Entonces
+						
+						Escribir "Parqueadero lleno";
+						
+					FinSi
+					
+					Limpiar Pantalla;
+					
+				FinPara
+				
+			2:
+				
+				Escribir "Ingrese Placa del vehiculo a consultar (Sin guion y en mayusculas)";
+				Leer consultaPlaca;
+					
+				Si consultaPlaca <> placa1 y consultaPlaca <> placa2 y consultaPlaca <> placa3 y consultaPlaca <> placa4 y consultaPlaca <> placa5 Entonces
+					
+					Repetir
+						
+						Escribir "Este vehiculo no se encuentra en el parqueadero, por favor ingrese otro numero de placa";
+						Leer consultaPlaca;
+						
+					Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+				FinSi
+				
+				Si consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5 Entonces
+					
+					Escribir  "El vehiculo se encuentra en el parqueadero";
+					
+				FinSi
+				
+			3:
+				
+				Escribir "Ingrese Placa del vehiculo a retirar (Sin guion y en mayusculas)";
+				Leer consultaPlaca;
+				
+				Si consultaPlaca <> placa1 y consultaPlaca <> placa2 y consultaPlaca <> placa3 y consultaPlaca <> placa4 y consultaPlaca <> placa5 Entonces
+					
+					Repetir
+						
+						Escribir "Este vehiculo no se encuentra en el parqueadero, por favor ingrese otro numero de placa";
+						Leer consultaPlaca;
+						
+					Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+				FinSi
+				
+				Si consultaPlaca = placa1 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 1";
+					Escribir "PLACA ", placa1;
+					Escribir "NOMBRE: ", NombreCompleto1;
+					
+					
+					NumeroCel1 <- 0;
+					NombreCompleto1 <- "";
+					placa1 <- "";
+					marca1 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa2 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 2";
+					Escribir "PLACA ", placa2;
+					Escribir "NOMBRE: ", NombreCompleto2;
+					
+					
+					NumeroCel2 <- 0;
+					NombreCompleto2 <- "";
+					placa2 <- "";
+					marca2 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa3 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 3";
+					Escribir "PLACA ", placa3;
+					Escribir "NOMBRE: ", NombreCompleto3;
+					
+					
+					NumeroCel3 <- 0;
+					NombreCompleto3 <- "";
+					placa3 <- "";
+					marca3 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa4 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 4";
+					Escribir "PLACA ", placa4;
+					Escribir "NOMBRE: ", NombreCompleto4;
+					
+					
+					NumeroCel4 <- 0;
+					NombreCompleto4 <- "";
+					placa4 <- "";
+					marca4 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa5 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 5";
+					Escribir "PLACA ", placa5;
+					Escribir "NOMBRE: ", NombreCompleto5;
+					
+					
+					NumeroCel5 <- 0;
+					NombreCompleto5 <- "";
+					placa5 <- "";
+					marca15<- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+			4:
+				Escribir "Hasta luego";
+				Opcion <- 4;
+			De Otro Modo:
+				
+				Mientras  Opcion >4 Hacer
+					
+					Escribir  "";
+					Escribir "Elija una opcion valida";
+					Opcion <- 1;
+					
+				FinMientras
+				
+				
+		FinSegun
+		
+		Escribir "";
+		
+	FinMientras
+	
+FinProceso

@@ -1,0 +1,587 @@
+Proceso Escuela_Automovilistica
+	
+	Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, nombreCompleto4, nombreCompleto5, nombreCompleto6, nombreCompleto7, nombreCompleto8 Como Caracter;
+	Definir ced1, ced2, ced3, ced4, ced5, ced6, ced7, ced8, resulPrueba1, resulPrueba2, resulPrueba3, resulPrueba4, resulPrueba5, resulPrueba6, resulPrueba7, resulPrueba8, Opcion, i, usuarioPermitido, consultaUsuario Como Entero;
+	Definir Respuesta, respuestaConsulta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 8;
+	nombreCompleto1 <- "";
+	nombreCompleto2 <- "";
+	nombreCompleto3 <- "";
+	nombreCompleto4 <- "";
+	nombreCompleto5 <- "";
+	nombreCompleto6 <- "";
+	nombreCompleto7 <- "";
+	nombreCompleto8 <- "";
+	ced1 <- 0;
+	ced2 <- 0;
+	ced3 <- 0;
+	ced4 <- 0;
+	ced5 <- 0;
+	ced6 <- 0;
+	ced7 <- 0;
+	ced8 <- 0;
+	resulPrueba1 <- 0;
+	resulPrueba2 <- 0;
+	resulPrueba3 <- 0;
+	resulPrueba4 <- 0;
+	resulPrueba5 <- 0;
+	resulPrueba6 <- 0;
+	resulPrueba7 <- 0;
+	resulPrueba8 <- 0;
+	
+	Mientras Opcion <= 2 Hacer
+		
+		Escribir "";
+		Escribir "Bienvenido a la escuela automovilistica, A continuacion elija una opcion";
+		
+		Escribir "1. Registrar ingreso de usuarios";
+		Escribir "2. Consultar usuarios y resultados";
+		Escribir "3. Salir";
+		Leer Opcion;
+		
+		Segun Opcion Hacer
+			1:
+				para i <- 1 Hasta usuarioPermitido Hacer
+					
+					Escribir "usuarios disponibles: ", usuarioPermitido;
+					
+					si i=1 Y nombreCompleto1 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto1;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced1;
+						
+						Mientras ced1 = ced2 O ced1 = ced3 O ced1 = ced4 O ced1 = ced5 O ced1 = ced6 O ced1 = ced7 O ced1 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced1;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba1;
+						
+						Mientras resulPrueba1 < 0 O resulPrueba1 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba1;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 2 Y nombreCompleto2 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto2;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced2;
+						
+						Mientras ced2 = ced1 O ced2 = ced3 O ced2 = ced4 O ced2 = ced5 O ced2 = ced6 O ced2 = ced7 O ced2 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced2;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba2;
+						
+						Mientras resulPrueba2 < 0 O resulPrueba2 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba2;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 3 Y nombreCompleto3 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto3;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced3;
+						
+						Mientras ced3 = ced1 O ced3 = ced2 O ced3 = ced4 O ced3 = ced5 O ced3 = ced6 O ced2 = ced3 O ced2 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced3;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba3;
+						
+						Mientras resulPrueba3 < 0 O resulPrueba3 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba3;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i = 4 Y nombreCompleto4 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto4;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced4;
+						
+						Mientras ced4 = ced1 O ced4 = ced2 O ced4 = ced3 O ced4 = ced5 O ced4 = ced6 O ced4 = ced7 O ced4 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced4;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba4;
+						
+						Mientras resulPrueba4 < 0 O resulPrueba4 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba4;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 5 Y nombreCompleto5 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto5;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced5;
+						
+						Mientras ced5 = ced1 O ced5 = ced2 O ced5 = ced3 O ced4 = ced5 O ced5 = ced6 O ced5 = ced7 O ced5 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced5;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba5;
+						
+						Mientras resulPrueba5 < 0 O resulPrueba5 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba5;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 6 Y nombreCompleto6 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto6;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced6;
+						
+						Mientras ced6 = ced1 O ced6 = ced2 O ced6 = ced3 O ced4 = ced6 O ced6 = ced5 O ced6 = ced7 O ced6 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced6;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba6;
+						
+						Mientras resulPrueba6 < 0 O resulPrueba6 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba6;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 7 Y nombreCompleto7 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto7;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced7;
+						
+						Mientras ced7 = ced1 O ced7 = ced2 O ced7 = ced3 O ced7 = ced4 O ced7 = ced5 O ced7 = ced6 O ced7 = ced8 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced7;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba7;
+						
+						Mientras resulPrueba7 < 0 O resulPrueba7 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba7;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i = 8 Y nombreCompleto8 = "" Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer nombreCompleto8;
+						
+						Escribir "Ingrese numero de cedula";
+						Leer ced8;
+						
+						Mientras ced8 = ced1 O ced8 = ced2 O ced8 = ced3 O ced8 = ced4 O ced8 = ced5 O ced8 = ced6 O ced8 = ced7 Hacer
+							
+							Escribir "El numero de cedula ya esta guardado";
+							Leer ced8;
+							
+						FinMientras
+						
+						Escribir "Ingrese resultado de la prueba (0-100)";
+						Leer resulPrueba8;
+						
+						Mientras resulPrueba8 < 0 O resulPrueba8 > 100 Hacer
+							
+							Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+							Leer resulPrueba8;
+							
+						FinMientras
+						
+						Escribir "usuario ", i, " registrado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea registrar otro usuario";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+						Si usuarioPermitido = 0 Entonces
+							
+							Escribir "No se pueden registrar mas usuarios";
+							
+						FinSi
+						
+					FinSi
+					
+					Limpiar Pantalla;
+					
+				FinPara
+				
+			2:
+				
+				Repetir
+					Escribir "Ingrese numero de cedula del usuario a consultar";
+					Leer consultaUsuario;
+					
+					Si consultaUsuario <> ced1 Y consultaUsuario <> ced2 Y consultaUsuario <> ced3 Y consultaUsuario <> ced4 Y consultaUsuario <> ced5 Y consultaUsuario <> ced6 Y consultaUsuario <> ced7 Y consultaUsuario <> ced8 Entonces
+						
+						Repetir
+							
+							Escribir "Este usuario no se encuentra registrado, por favor ingrese otro numero de cedula";
+							Leer consultaUsuario;
+							
+						Hasta Que consultaUsuario = ced1 O consultaUsuario = ced2 O consultaUsuario = ced3 O consultaUsuario = ced4 O consultaUsuario = ced5 O consultaUsuario = ced6 O consultaUsuario = ced7 O consultaUsuario = ced8
+						
+					FinSi
+					
+					Si consultaUsuario = ced1 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 1";
+						Escribir "NOMBRE: ", NombreCompleto1;
+						Escribir "NUMERO DE CEDULA: ", ced1;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba1;
+						
+						Si resulPrueba1 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced2 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 2";
+						Escribir "NOMBRE: ", NombreCompleto2;
+						Escribir "NUMERO DE CEDULA: ", ced2;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba2;
+						
+						Si resulPrueba2 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced3 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 3";
+						Escribir "NOMBRE: ", NombreCompleto3;
+						Escribir "NUMERO DE CEDULA: ", ced3;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba3;
+						
+						Si resulPrueba3 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced4 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 4";
+						Escribir "NOMBRE: ", NombreCompleto4;
+						Escribir "NUMERO DE CEDULA: ", ced4;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba4;
+						
+						Si resulPrueba4 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced5 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 5";
+						Escribir "NOMBRE: ", NombreCompleto5;
+						Escribir "NUMERO DE CEDULA: ", ced5;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba5;
+						
+						Si resulPrueba5 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced6 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 6";
+						Escribir "NOMBRE: ", NombreCompleto6;
+						Escribir "NUMERO DE CEDULA: ", ced6;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba6;
+						
+						Si resulPrueba6 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced7 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 7";
+						Escribir "NOMBRE: ", NombreCompleto7;
+						Escribir "NUMERO DE CEDULA: ", ced7;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba7;
+						
+						Si resulPrueba7 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced8 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 8";
+						Escribir "NOMBRE: ", NombreCompleto8;
+						Escribir "NUMERO DE CEDULA: ", ced8;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba8;
+						
+						Si resulPrueba8 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Escribir "Desea consultar otro usuario?";
+					Leer respuestaConsulta;
+					
+				Hasta Que respuestaConsulta = Falso;
+				
+			3:
+				Escribir "Hasta luego";
+				Opcion <- 3;
+			De Otro Modo:
+				
+				Mientras  Opcion >3 Hacer
+					
+					Escribir  "";
+					Escribir "Elija una opcion valida";
+					Opcion <- 1;
+					
+				FinMientras
+				
+		FinSegun
+		
+	FinMientras
+	
+	
+FinProceso

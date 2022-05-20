@@ -1,0 +1,219 @@
+Proceso Contactos_Telefonicos
+	
+	Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, Organizacion1, Organizacion2, Organizacion3 Como Caracter;
+	Definir NumeroCel1, NumeroCel2, NumeroCel3, NumeroEliminar, Opcion, i, usuarioPermitido, OpcionEliminar Como Entero;
+	Definir Respuesta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 3;
+	NombreCompleto1 <- "";
+	NombreCompleto2 <- "";
+	NombreCompleto3 <- "";
+	Organizacion1 <- "";
+	Organizacion2 <- "";
+	Organizacion3 <- "";
+	NumeroCel1 <- 0;
+	NumeroCel2 <- 0;
+	NumeroCel3 <- 0;
+		
+	Mientras Opcion <= 3 Hacer
+		
+		Escribir "Bienvenido, A continuacion elija una opcion";
+		
+		Escribir "1. Crear contacto";
+		Escribir "2. Ver contactos registrados";
+		Escribir "3. Eliminar Contactos";
+		Escribir "4. Salir";
+		Leer Opcion;
+		
+		Segun Opcion Hacer
+			1: 
+				Para i <- 1 hasta usuarioPermitido con paso 1 Hacer
+					
+					Escribir "usuarios permitidos: ", usuarioPermitido;
+					
+					Si i = 1 Y NumeroCel1 = 0 Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto1;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel1;
+						
+						Mientras NumeroCel1 = NumeroCel2 O NumeroCel1 = NumeroCel3  Hacer
+							
+							Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+							Leer NumeroCel1;
+							
+						FinMientras
+						
+						Escribir "Ingrese Organizacion";
+						Leer Organizacion1;
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 4;
+							
+						FinSi
+						
+						
+					FinSi
+					
+					Si i=2 Y NumeroCel2 = 0 Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto2;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel2;
+							
+							Mientras NumeroCel1 = NumeroCel2 O NumeroCel2 = NumeroCel3  Hacer
+								
+								Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+								Leer NumeroCel2;
+								
+							FinMientras
+							
+						Escribir "Ingrese Organizacion";
+						Leer Organizacion2;
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 4;
+							
+						FinSi
+						
+					FinSi
+					
+					Si i=3 Y NumeroCel3 = 0 Entonces
+						
+						Escribir "Ingrese nombre completo";
+						Leer NombreCompleto3;
+						
+						Escribir "Ingrese Numero Telefonico";
+						Leer NumeroCel3;
+						
+						Mientras NumeroCel1 = NumeroCel3 O NumeroCel2 = NumeroCel3  Hacer
+							
+							Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+							Leer NumeroCel3;
+							
+						FinMientras					
+						
+						Escribir "Ingrese Organizacion";
+						Leer Organizacion3;
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+					FinSi
+					
+					
+					Limpiar Pantalla;					
+					
+				FinPara
+					
+				2:
+					
+					Escribir "Los contactos registrados son los siguientes";
+					Escribir "";
+					Escribir "usuario 1";
+					Escribir "NOMBRE: ", NombreCompleto1;
+					Escribir "NUMERO TELEFONICO: ", NumeroCel1;
+					Escribir "ORGANIZACION: ", Organizacion1;
+					Escribir "";
+					Escribir "usuario 2";
+					Escribir "NOMBRE: ", NombreCompleto2;
+					Escribir "NUMERO TELEFONICO: ", NumeroCel2;
+					Escribir "ORGANIZACION: ", Organizacion2;
+					Escribir "";
+					Escribir "usuario 3";
+					Escribir "NOMBRE: ", NombreCompleto3;
+					Escribir "NUMERO TELEFONICO: ", NumeroCel3;
+					Escribir "ORGANIZACION: ", Organizacion3;
+					Escribir "";
+					
+				3:
+					Escribir "Por favor ingrese el numero telefonico a eliminar";
+					Leer NumeroEliminar;
+					
+					Si NumeroEliminar <> NumeroCel1 y NumeroEliminar <> NumeroCel2 y NumeroEliminar <> NumeroCel3 Entonces
+						
+						Repetir
+							Escribir "Este Numero no existe, por favor ingrese otro numero";
+							Leer NumeroEliminar;
+							
+						Hasta Que NumeroEliminar = NumeroCel1 o NumeroEliminar = NumeroCel2 o NumeroEliminar = NumeroCel3
+					FinSi
+					
+					Si NumeroEliminar = NumeroCel1 Entonces
+						
+						Escribir "El contacto ha sido eliminado correctamente";
+						Escribir "";
+						Escribir "usuario 1";
+						Escribir "NOMBRE: ", NombreCompleto1;
+						Escribir "NUMERO TELEFONICO: ", NumeroCel1;
+						Escribir "ORGANIZACION: ", Organizacion1;
+						
+						NumeroCel1 <- 0;
+						NombreCompleto1 <- "";
+						Organizacion1 <- "";
+						usuarioPermitido <- usuarioPermitido + 1;
+						
+					FinSi
+					
+					Si NumeroEliminar = NumeroCel2 Entonces
+						
+						Escribir "El contacto ha sido eliminado correctamente";
+						Escribir "";
+						Escribir "usuario 2";
+						Escribir "NOMBRE: ", NombreCompleto2;
+						Escribir "NUMERO TELEFONICO: ", NumeroCel2;
+						Escribir "ORGANIZACION: ", Organizacion2;
+						
+						NumeroCel2 <- 0;
+						NombreCompleto2 <- "";
+						Organizacion2 <- "";
+						usuarioPermitido <- usuarioPermitido + 1;
+						
+					FinSi
+					
+					Si NumeroEliminar = NumeroCel3 Entonces
+						
+						Escribir "El contacto ha sido eliminado correctamente";
+						Escribir "";
+						Escribir "usuario 3";
+						Escribir "NOMBRE: ", NombreCompleto3;
+						Escribir "NUMERO TELEFONICO: ", NumeroCel3;
+						Escribir "ORGANIZACION: ", Organizacion3;
+						
+						NumeroCel3 <- 0;
+						NombreCompleto3 <- "";
+						Organizacion3 <- "";
+						usuarioPermitido <- usuarioPermitido + 1;
+						
+					FinSi
+					
+			FinSegun
+			
+		Escribir "";
+		
+	FinMientras
+		
+FinProceso

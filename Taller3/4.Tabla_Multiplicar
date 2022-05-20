@@ -1,0 +1,15 @@
+Proceso Tabla_Multiplicar
+	
+	Definir num, i, Resul Como Entero;
+	
+	Escribir "Ingrese el numero del cual desea ver la tabla";
+	Leer num;
+	
+	Para i <- 1 Hasta 10 Con Paso 1 Hacer
+		
+		Resul	<- i * num;
+		Escribir i, " x ", num, " = ", Resul; 
+		
+	FinPara
+	
+FinProceso

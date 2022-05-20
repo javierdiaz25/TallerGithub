@@ -1,0 +1,66 @@
+Proceso Calculo_Area
+	
+	Definir Area Como Entero;
+	Definir Base1, Base2, Altura, ValorArea Como Real;
+	
+	escribir "Que Area desea Calcular?";
+	Escribir "1. Area de un Rectangulo";
+	Escribir "2. Area de un Triangulo";
+	Escribir "3. Area de un Trapecio";
+	Leer Area;
+	
+	Limpiar Pantalla;
+	
+	Segun Area Hacer	
+		1:
+			Escribir "El area de un Rectangulo es igual a :";
+			Escribir "Base * Altura";
+			
+			Escribir "Ingrese la base";
+			Leer Base1;
+			
+			Escribir "Ingrese la Altura";
+			Leer Altura;
+			
+			ValorArea <- Base1 * Altura;
+			
+			Escribir "El area del Rectangulo es de: ", ValorArea;
+			
+		2:
+			Escribir "El area de un Triangulo es igual a :";
+			Escribir "(Base * Altura) / 2";
+			
+			Escribir "Ingrese la base";
+			Leer Base1;
+			
+			Escribir "Ingrese la Altura";
+			Leer Altura;
+			
+			ValorArea <- (Base1 * Altura) / 2;
+			
+			Escribir "El area del Triangulo es de: ", ValorArea;
+			
+		3:
+			Escribir "El area de un Trapecio es igual a :";
+			Escribir "((Base 1 + Base 2) * Altura) / 2";
+			
+			Escribir "Ingrese primera base";
+			Leer Base1;
+			
+			Escribir "Ingrese segunda base";
+			Leer Base2;
+			
+			Escribir "Ingrese la Altura";
+			Leer Altura;
+			
+			ValorArea <- ((Base1 + Base2) * Altura ) / 2;
+			
+			Escribir "El area del Trapecio es de: ", ValorArea;
+			
+		De Otro Modo:
+			
+			Escribir "Elija una opcion valida";
+			
+	FinSegun
+	
+FinProceso

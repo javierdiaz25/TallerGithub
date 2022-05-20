@@ -1,0 +1,195 @@
+Proceso Pasteleria
+	
+	Definir NombreCliente Como Caracter;
+	Definir OpcionTorta, OpcionDecoracion, Cantidad, Torta1, Torta2, Torta3 Como Entero;
+	Definir Decoracion Como Logico;
+	Definir DecoracionGrajeas, DecoracionSalsa, ValorTorta Como Real;
+	
+	Escribir "Bienvenido a la Pasterleria de Don carlos";
+	
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCliente;
+	
+	Limpiar Pantalla;
+	
+	Escribir "A continuacion mostraremos las Tortas Disponibles";
+	Escribir "1, Torta Maria Luisa - $30000";
+	Escribir "2. Torta de Nucita - $35000";
+	Escribir "3. Torta de Yogourt - $40000";
+	Leer OpcionTorta;
+	
+	Segun OpcionTorta Hacer
+		1: 
+			Escribir "Desea alguna decoracion?";
+			Leer Decoracion;
+			
+			Si Decoracion = Verdadero Entonces
+				
+				Escribir "Elija la Decoracion";
+				Escribir "1, Grajeas de Colores - $5000";
+				Escribir "2. Salsa de Frutos Rojos - $7000";
+				Leer OpcionDecoracion;
+				
+				Segun  OpcionDecoracion Hacer
+					1: 
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionGrajeas <- 5000;
+						Torta1 <- 30000;
+						ValorTorta <- Cantidad * (Torta1 + DecoracionGrajeas);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Grajeas de Colores";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+					2:
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionSalsa <- 7000;
+						Torta1 <- 30000;
+						ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Salsas de Frutos Rojos";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+						
+					De Otro Modo:
+						
+						Escribir "Elija una opcion valida";
+						
+				FinSegun
+				
+			SiNo
+				
+				Escribir "Cuantas Cantidades desea?";
+				Leer Cantidad;
+				
+				Torta1 <- 30000;
+				ValorTorta <- Cantidad * Torta1;
+				
+				Escribir "El pedido de ", NombreCliente, " es:";
+				Escribir Cantidad, " Tortas de Maria Luisa sin Decoración";
+				Escribir  "El valor a cancelar es de: ", ValorTorta;
+				
+			FinSi
+		2:
+			Escribir "Desea alguna decoracion?";
+			Leer Decoracion;
+			
+			Si Decoracion = Verdadero Entonces
+				
+				Escribir "Elija la Decoracion";
+				Escribir "1, Grajeas de Colores - $5000";
+				Escribir "2. Salsa de Frutos Rojos - $7000";
+				Leer OpcionDecoracion;
+				
+				Segun  OpcionDecoracion Hacer
+					1: 
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionGrajeas <- 5000;
+						Torta1 <- 35000;
+						ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Nucita con Decoración de Grajeas de Colores";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+					2:
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionSalsa <- 7000;
+						Torta1 <- 35000;
+						ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Nucita con Decoración de Salsas de Frutos Rojos";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+						
+					De Otro Modo:
+						
+						Escribir "Elija una opcion valida";
+						
+				FinSegun
+				
+			SiNo
+				
+				Escribir "Cuantas Cantidades desea?";
+				Leer Cantidad;
+				
+				Torta1 <- 35000;
+				ValorTorta <- Cantidad * Torta1;
+				
+				
+				Escribir "El pedido de ", NombreCliente, " es:";
+				Escribir Cantidad, " Tortas de Nucita sin Decoración";
+				Escribir  "El valor a cancelar es de: ", ValorTorta;
+				
+			FinSi
+		3:
+			Escribir "Desea alguna decoracion?";
+			Leer Decoracion;
+			
+			Si Decoracion = Verdadero Entonces
+				
+				Escribir "Elija la Decoracion";
+				Escribir "1, Grajeas de Colores - $5000";
+				Escribir "2. Salsa de Frutos Rojos - $7000";
+				Leer OpcionDecoracion;
+				
+				Segun  OpcionDecoracion Hacer
+					1: 
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionGrajeas <- 5000;
+						Torta1 <- 40000;
+						ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Yogourt con Decoración de Grajeas de Colores";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+						
+					2:
+						Escribir "Cuantas Cantidades desea?";
+						Leer Cantidad;
+						
+						DecoracionSalsa <- 7000;
+						Torta1 <- 40000;
+						ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+						
+						Escribir "El pedido de ", NombreCliente, " es:";
+						Escribir Cantidad, " Tortas de Yogourt con Decoración de Salsas de Frutos Rojos";
+						Escribir  "El valor a cancelar es de: ", ValorTorta;
+						
+						
+					De Otro Modo:
+						
+						Escribir "Elija una opcion valida";
+						
+				FinSegun
+				
+			SiNo
+				
+				Escribir "Cuantas Cantidades desea?";
+				Leer Cantidad;
+				
+				Torta1 <- 40000;
+				ValorTorta <- Cantidad * Torta1;
+				
+				Escribir "El pedido de ", NombreCliente, " es:";
+				Escribir Cantidad, " Tortas de Yogourt sin Decoración";
+				Escribir  "El valor a cancelar es de: ", ValorTorta;
+				
+				
+			FinSi
+			
+		De Otro Modo:
+			
+			Escribir "Elija una opcion valida";
+			
+	FinSegun
+	
+FinProceso

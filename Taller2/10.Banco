@@ -1,0 +1,109 @@
+Proceso Banco
+	
+	Definir NombreCompelto Como Caracter;
+	Definir NumeroCuenta, Opcion Como Entero;
+	Definir SaldoActual, ValorIngreso, ValorTotal Como Real;
+	Definir ImprimirRecibo Como Logico;
+	
+	SaldoActual <- 500000;
+	
+	Escribir "Bienvenido a Su banco Fiel";
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCompelto;
+	Escribir "Digite numero de cuenta";
+	Leer NumeroCuenta;
+	
+	Limpiar Pantalla;
+	
+	Escribir "A continuacion elija una opcion";
+	Escribir "1. Ingreso";
+	Escribir "2. Retiro";
+	Escribir "3. Consultas";
+	Leer Opcion; 
+	
+	Limpiar Pantalla;
+	
+	Segun Opcion Hacer
+		1:
+			
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			Escribir "Cuanto dinero va a ingresar en la cuenta ";
+			Leer ValorIngreso;
+			
+			ValorTotal <- SaldoActual + ValorIngreso;
+			
+			Escribir "Su nuevo saldo es de: ", ValorTotal;
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+		2:
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			Escribir "Cuanto dinero va a retirar en la cuenta ";
+			Leer ValorIngreso;
+			
+			ValorTotal <- SaldoActual - ValorIngreso;
+			
+			Escribir "Su nuevo saldo es de: ", ValorTotal;
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+		3:
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+			
+	FinSegun
+	
+FinProceso

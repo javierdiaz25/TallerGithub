@@ -1,0 +1,141 @@
+Proceso Drogueria
+	
+	Definir NombreCliente Como Caracter;
+	Definir OpcionConsulta, OpcionProducto, Cantidad, Devolucion, CantidadDevolucion Como Entero;
+	Definir Respuesta Como Logico;
+	Definir ValorVenta, ValorDevolucion Como Real;
+	
+	Escribir "Bienvenido a La Drogueria Mi Salud, Por favor ingrese sus datos";
+	
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCliente;
+	
+	Limpiar Pantalla;
+	
+	Escribir "¿Que desea hacer?";
+	Escribir "1. Consultar Pruductos Disponibles";
+	Escribir "2. Devolver Producto";
+	Leer OpcionConsulta;
+	
+	Limpiar Pantalla;
+	
+	Segun 	OpcionConsulta Hacer
+		1:
+			Escribir "¿Que Pruducto desea llevar?";
+			Escribir "1. Vitamina C";
+			Escribir "2. Acetaminofen";
+			Escribir "3. Pañales etapa 5";
+			Escribir "4. Jabon";
+			Leer OpcionProducto;
+			
+			Segun OpcionProducto Hacer 
+				1: 	
+					Escribir "El valor del sobre de Vitamina C es de $3.500";
+					Escribir "¿Lo va a llevar?";
+					Leer Respuesta;
+					
+					si Respuesta = Verdadero Entonces
+						Escribir "¿Cuantos sobres va a llevar?";
+						Leer Cantidad;
+						
+						ValorVenta <- 3500 * Cantidad;
+						
+						Escribir "El valor de su factura es de:" , ValorVenta;
+						escribir "Gracias por su compra";
+						
+					SiNo
+						Escribir "Bueno, con mucho gusto";
+					FinSi
+				2:
+					Escribir "El valor de la tableta por 10 unidades de Acetaminofen es de $1500";
+					Escribir "¿Lo va a llevar?";
+					Leer Respuesta;
+					
+					si Respuesta = Verdadero Entonces
+						Escribir "¿Cuantos tabletas va a llevar?";
+						Leer Cantidad;
+						
+						ValorVenta <- 1500 * Cantidad;
+						
+						Escribir "El valor de su factura es de:" , ValorVenta;
+						escribir "Gracias por su compra";
+						
+					SiNo
+						Escribir "Bueno, con mucho gusto";
+					FinSi
+				3:
+					Escribir "El valor de cada pañal etapa 5 es de $2500";
+					Escribir "¿Lo va a llevar?";
+					Leer Respuesta;
+					
+					si Respuesta = Verdadero Entonces
+						Escribir "¿Cuantos pañales va a llevar?";
+						Leer Cantidad;
+						
+						ValorVenta <- 2500 * Cantidad;
+						
+						Escribir "El valor de su factura es de:" , ValorVenta;
+						escribir "Gracias por su compra";
+						
+					SiNo
+						Escribir "Bueno, con mucho gusto";
+					FinSi
+				4:
+					Escribir "El valor de cada jabon es de $3000";
+					Escribir "¿Lo va a llevar?";
+					Leer Respuesta;
+					
+					si Respuesta = Verdadero Entonces
+						Escribir "¿Cuantos jabones va a llevar?";
+						Leer Cantidad;
+						
+						ValorVenta <- 3000 * Cantidad;
+						
+						Escribir "El valor de su factura es de:" , ValorVenta;
+						escribir "Gracias por su compra";
+						
+					SiNo
+						Escribir "Bueno, con mucho gusto";
+					FinSi
+			FinSegun
+		2:
+			Escribir "¿Que Pruducto desea devolver?";
+			Escribir "1. Vitamina C";
+			Escribir "2. Acetaminofen";
+			Escribir "3. Pañales etapa 5";
+			Escribir "4. Jabon";
+			Leer Devolucion;
+			
+			Segun Devolucion Hacer	
+				1: 
+					Escribir "¿Cuantos Sobres va a devolver?";
+					Leer CantidadDevolucion;
+					
+					ValorDevolucion <- 3500 * CantidadDevolucion;
+					
+					Escribir "Le devuelvo ", ValorDevolucion;
+				2:
+					Escribir "¿Cuantos tabletas va a devolver?";
+					Leer CantidadDevolucion;
+					
+					ValorDevolucion <- 1500 * CantidadDevolucion;
+					
+					Escribir "Le devuelvo ", ValorDevolucion;
+				3:
+					Escribir "¿Cuantos pañales va a devolver?";
+					Leer CantidadDevolucion;
+					
+					ValorDevolucion <- 2500 * CantidadDevolucion;
+					
+					Escribir "Le devuelvo ", ValorDevolucion;
+				4:
+					Escribir "¿Cuantos jabones va a devolver?";
+					Leer CantidadDevolucion;
+					
+					ValorDevolucion <- 3000 * CantidadDevolucion;
+					
+					Escribir "Le devuelvo ", ValorDevolucion;
+			FinSegun
+	FinSegun
+	
+FinProceso

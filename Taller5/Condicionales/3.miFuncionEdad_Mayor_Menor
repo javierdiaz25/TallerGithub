@@ -1,0 +1,33 @@
+SubProceso resul <- edadPersona ( Edad )
+	
+	Definir resul Como Caracter;
+	
+	Si Edad >= 18 Entonces
+		
+		resul <- "usted es mayor de edad, por lo tanto puede entrar a la fiesta";
+		
+	SiNo
+		
+		resul <- "usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuelvase para su casa";
+		
+	FinSi
+	
+FinSubProceso
+
+Proceso Edad_Mayor_Menor
+	
+	Definir Nombre, Apellidos Como Caracter;
+	Definir Edad Como Entero;
+	
+	Escribir "Ingrese el nombre de la persona";
+	Leer Nombre;
+	
+	Escribir "Ingrese los apellidos de la persona";
+	Leer Apellidos;
+	
+	Escribir "ingrese la edad de la persona"; 
+	Leer Edad;
+	
+	Escribir Nombre, " ", Apellidos, edadPersona(Edad);
+	
+FinProceso

@@ -1,0 +1,535 @@
+SubProceso resulConsulta <- consultarUsuario(consulUsuario, c1, c2, c3, c4, c5, c6, c7, c8 )
+	
+	Definir resulConsulta Como Entero;
+	
+	Si consulUsuario <> c1 Y consulUsuario <> c2 Y consulUsuario <> c3 Y consulUsuario <> c4 Y consulUsuario <> c5 Y consulUsuario <> c6 Y consulUsuario <> c7 Y consulUsuario <> c8 Entonces
+		
+		Repetir
+			
+			Escribir "Este usuario no se encuentra registrado, por favor ingrese otro numero de cedula";
+			Leer consulUsuario;
+			
+			resulConsulta <- consulUsuario;
+			
+		Hasta Que consulUsuario = c1 O consulUsuario = c2 O consulUsuario = c3 O consulUsuario = c4 O consulUsuario = c5 O consulUsuario = c6 O consulUsuario = c7 O consulUsuario = c8
+	SiNo
+		resulConsulta <- consulUsuario;
+	FinSi
+FinSubProceso
+
+SubProceso result <- condicionNumero(c1, c2, c3, c4, c5, c6, c7, c8, i)
+	
+	Definir result Como Entero;
+	
+	Si i = 1 Entonces
+		Mientras c1 = c2 O c1 = c3 O c1 = c4 O c1 = c5 O c1 = c6 O c1 = c7 O c1 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c1;
+			
+		FinMientras
+		result <- c1;
+	FinSi
+	
+	si	i=2 Entonces
+		Mientras c1 = c2 O c2 = c3 O c2 = c4 O c2 = c5 O c2 = c6 O c2 = c7 O c2 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c2;
+			
+		FinMientras
+		result <- c2;
+	FinSi
+	
+	si	i=3 Entonces
+		Mientras c1 = c3 O c2 = c3 O c3 = c4 O c3 = c5 O c3 = c6 O c3 = c7 O c3 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c3;
+			
+		FinMientras
+		result <- c3;
+	FinSi
+	
+	si	i=4 Entonces
+		Mientras c1 = c4 O c2 = c4 O c3 = c4 O c4 = c5 O c4 = c6 O c4 = c7 O c4 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c4;
+			
+		FinMientras
+		result <- c4;
+	FinSi
+	
+	si	i=5 Entonces
+		Mientras c1 = c5 O c2 = c5 O c3 = c5 O c4 = c5 O c5 = c6 O c5 = c7 O c5 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c5;
+			
+		FinMientras
+		result <- c5;
+	FinSi
+	
+	si	i=6 Entonces
+		Mientras c1 = c6 O c2 = c6 O c3 = c6 O c4 = c6 O c5 = c6 O c6 = c7 O c6 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c6;
+			
+		FinMientras
+		result <- c6;
+	FinSi
+	
+	si	i=7 Entonces
+		Mientras c1 = c7 O c2 = c7 O c3 = c7 O c4 = c7 O c5 = c7 O c6 = c7 O c7 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c7;
+			
+		FinMientras
+		result <- c7;
+	FinSi
+	
+	si	i=8 Entonces
+		Mientras c1 = c8 O c2 = c8 O c3 = c8 O c4 = c8 O c5 = c8 O c6 = c8 O c7 = c8 Hacer
+			
+			Escribir "El numero de cedula ya esta guardado";
+			Leer c8;
+			
+		FinMientras
+		result <- c8;
+	FinSi
+FinSubProceso
+
+SubProceso  datoNombre <- capturarNombre(nombre)
+	
+	Definir datoNombre Como Caracter;
+	
+	Escribir "Ingrese nombre completo";
+	Leer datoNombre;
+	
+FinSubProceso
+
+SubProceso  datoCedula <- capturarCedula(cedula)
+	
+	Definir datoCedula Como entero;
+	
+	Escribir "Ingrese numero de cedula";
+	Leer datoCedula;
+	
+FinSubProceso
+
+SubProceso  datoPrueba<- capturarPrueba(prueba)
+	
+	Definir datoPrueba Como Entero;
+	
+	Escribir "Ingrese resultado de la prueba (0-100)";
+	Leer datoPrueba;
+	
+FinSubProceso
+
+Proceso sin_titulo
+	Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, nombreCompleto4, nombreCompleto5, nombreCompleto6, nombreCompleto7, nombreCompleto8 Como Caracter;
+	Definir ced1, ced2, ced3, ced4, ced5, ced6, ced7, ced8, resulPrueba1, resulPrueba2, resulPrueba3, resulPrueba4, resulPrueba5, resulPrueba6, resulPrueba7, resulPrueba8, Opcion, i, usuarioPermitido, consultaUsuario Como Entero;
+	Definir Respuesta, respuestaConsulta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 8;
+	nombreCompleto1 <- "";
+	nombreCompleto2 <- "";
+	nombreCompleto3 <- "";
+	nombreCompleto4 <- "";
+	nombreCompleto5 <- "";
+	nombreCompleto6 <- "";
+	nombreCompleto7 <- "";
+	nombreCompleto8 <- "";
+	ced1 <- 0;
+	ced2 <- 0;
+	ced3 <- 0;
+	ced4 <- 0;
+	ced5 <- 0;
+	ced6 <- 0;
+	ced7 <- 0;
+	ced8 <- 0;
+	resulPrueba1 <- 0;
+	resulPrueba2 <- 0;
+	resulPrueba3 <- 0;
+	resulPrueba4 <- 0;
+	resulPrueba5 <- 0;
+	resulPrueba6 <- 0;
+	resulPrueba7 <- 0;
+	resulPrueba8 <- 0;
+	
+	Mientras Opcion <= 2 Hacer
+		
+		Escribir "";
+		Escribir "Bienvenido a la escuela automovilistica, A continuacion elija una opcion";
+		
+		Escribir "1. Registrar ingreso de usuarios";
+		Escribir "2. Consultar usuarios y resultados";
+		Escribir "3. Salir";
+		Leer Opcion;
+		
+		Segun Opcion Hacer
+			1:
+				para i <- 1 Hasta usuarioPermitido Hacer
+					
+					Escribir "usuarios disponibles: ", usuarioPermitido;
+					
+					Si i=1 Y nombreCompleto1 = "" Entonces
+						nombreCompleto1<- capturarNombre(1);
+						ced1 <- condicionNumero(capturarCedula(1), ced2, ced3, ced4, ced5, ced6, ced7, ced8, i);
+						resulPrueba1 <- capturarPrueba(1);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=2 Y nombreCompleto2 = "" Entonces
+						nombreCompleto2<- capturarNombre(2);
+						ced2 <- condicionNumero(ced1, capturarCedula(2), ced3, ced4, ced5, ced6, ced7, ced8, i);
+						resulPrueba2 <- capturarPrueba(2);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=3 Y nombreCompleto3 = "" Entonces
+						nombreCompleto3<- capturarNombre(3);
+						ced3 <- condicionNumero(ced1, ced2, capturarCedula(3), ced4, ced5, ced6, ced7, ced8, i);
+						resulPrueba3 <- capturarPrueba(3);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=4 Y nombreCompleto4 = "" Entonces
+						nombreCompleto4<- capturarNombre(4);
+						ced4 <- condicionNumero(ced1, ced2, ced3, capturarCedula(4), ced5, ced6, ced7, ced8, i);
+						resulPrueba4 <- capturarPrueba(4);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=5 Y nombreCompleto5 = "" Entonces
+						nombreCompleto5<- capturarNombre(5);
+						ced5 <- condicionNumero(ced1, ced2, ced3, ced4, capturarCedula(5), ced6, ced7, ced8, i);
+						resulPrueba5 <- capturarPrueba(5);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=6 Y nombreCompleto6 = "" Entonces
+						nombreCompleto6<- capturarNombre(6);
+						ced6 <- condicionNumero(ced1, ced2, ced3, ced4, ced5, capturarCedula(6), ced7, ced8, i);
+						resulPrueba6 <- capturarPrueba(6);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=7 Y nombreCompleto7 = "" Entonces
+						nombreCompleto7<- capturarNombre(7);
+						ced7 <- condicionNumero(ced1, ced2, ced3, ced4, ced5, ced6, capturarCedula(7), ced8, i);
+						resulPrueba7 <- capturarPrueba(7);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+					FinSi
+					
+					Si i=8 Y nombreCompleto8 = "" Entonces
+						nombreCompleto8<- capturarNombre(8);
+						ced8 <- condicionNumero(ced1, ced2, ced3, ced4, ced5, ced6, ced7, capturarCedula(8), i);
+						resulPrueba8 <- capturarPrueba(8);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 9;
+							
+						FinSi
+						
+						Si usuarioPermitido = 0 Entonces
+							
+							Escribir "No se pueden registrar mas usuarios";
+							
+						FinSi
+						
+					FinSi
+					
+					Limpiar Pantalla;
+				FinPara
+			2:
+				Repetir
+					Escribir "Ingrese numero de cedula del usuario a consultar";
+					Leer consultaUsuario;
+					
+					consultaUsuario <- consultarUsuario(consultaUsuario, ced1, ced2, ced3, ced4, ced5, ced6, ced7, ced8 );
+					
+					Si consultaUsuario = ced1 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 1";
+						Escribir "NOMBRE: ", NombreCompleto1;
+						Escribir "NUMERO DE CEDULA: ", ced1;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba1;
+						
+						Si resulPrueba1 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced2 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 2";
+						Escribir "NOMBRE: ", NombreCompleto2;
+						Escribir "NUMERO DE CEDULA: ", ced2;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba2;
+						
+						Si resulPrueba2 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced3 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 3";
+						Escribir "NOMBRE: ", NombreCompleto3;
+						Escribir "NUMERO DE CEDULA: ", ced3;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba3;
+						
+						Si resulPrueba3 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced4 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 4";
+						Escribir "NOMBRE: ", NombreCompleto4;
+						Escribir "NUMERO DE CEDULA: ", ced4;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba4;
+						
+						Si resulPrueba4 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced5 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 5";
+						Escribir "NOMBRE: ", NombreCompleto5;
+						Escribir "NUMERO DE CEDULA: ", ced5;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba5;
+						
+						Si resulPrueba5 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced6 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 6";
+						Escribir "NOMBRE: ", NombreCompleto6;
+						Escribir "NUMERO DE CEDULA: ", ced6;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba6;
+						
+						Si resulPrueba6 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced7 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 7";
+						Escribir "NOMBRE: ", NombreCompleto7;
+						Escribir "NUMERO DE CEDULA: ", ced7;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba7;
+						
+						Si resulPrueba7 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Si consultaUsuario = ced8 Entonces
+						
+						Escribir "";
+						Escribir "USUARIO 8";
+						Escribir "NOMBRE: ", NombreCompleto8;
+						Escribir "NUMERO DE CEDULA: ", ced8;
+						Escribir "RESULTADO DEL CURSO: ", resulPrueba8;
+						
+						Si resulPrueba8 < 80 Entonces
+							
+							Escribir "El usuario no aprobo el curso";
+							
+						SiNo
+							
+							Escribir "El usuario aprobo el curso";
+							
+						FinSi
+						
+					FinSi
+					
+					Escribir "Desea consultar otro usuario?";
+					Leer respuestaConsulta;
+					
+				Hasta Que respuestaConsulta = Falso;
+			3:
+				Escribir "Hasta luego";
+				Opcion <- 3;
+			De Otro Modo:
+				
+				Mientras  Opcion >3 Hacer
+					
+					Escribir  "";
+					Escribir "Elija una opcion valida";
+					Opcion <- 1;
+					
+				FinMientras
+		FinSegun
+	FinMientras
+	
+FinProceso

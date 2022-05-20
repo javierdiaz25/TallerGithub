@@ -1,0 +1,80 @@
+SubProceso InventarioRespuestos ( GuardarCambio )
+	
+	Si GuardarCambio = Verdadero Entonces
+		
+		Escribir "Los respuestos fueron guardados correctamente en inventario";
+		
+	SiNo
+		Escribir "Tenga Feliz Dia";
+	FinSi
+	
+FinSubProceso
+
+SubProceso SalidaMoto ( )
+	
+	Definir NombreCliente, PlacaMoto, Repuestos, Novedades Como Caracter;
+	Definir GuardarCambio Como Logico;
+	
+	Escribir "Ingrese nombre completo"; 
+	Leer NombreCliente;
+	
+	Escribir "Ingrese Numero de placa de Motocicleta";
+	Leer PlacaMoto;
+	
+	Escribir "Repuestos cambiados";
+	Leer Repuestos;
+	
+	Escribir "Detalle Brevemente las novedades encontradas en la reparacion de la Motocicleta";
+	Leer Novedades;
+	
+	Escribir "La Motocicleta con placas ", PlacaMoto, " se le realizo el cambio de ", Repuestos, " por lo siguente ", Novedades;
+	Escribir "Desea inventarian los repuestos cambiados en la Motocicleta";
+	Leer GuardarCambio;
+	
+	InventarioRespuestos(GuardarCambio);
+	
+FinSubProceso
+
+SubProceso IngresoMoto ( )
+	
+	Definir NombreCliente, PlacaMoto, DetallesMotocicleta Como Caracter;
+	
+	Escribir "Ingrese nombre completo"; 
+	Leer NombreCliente;
+	
+	Escribir "Ingrese Numero de placa de Motocicleta";
+	Leer PlacaMoto;
+	
+	Escribir "Ingrese Brevemente los detalles por los cuales trae la Motocicleta";
+	Leer DetallesMotocicleta;
+	
+	Escribir "Registro del Cliente ", NombreCliente, " de motocicleta con placas ", PlacaMoto;
+	Escribir "Presenta las siguentes observaciones:";
+	Escribir DetallesMotocicleta;
+	
+FinSubProceso
+
+Proceso TallerMotos
+	
+	Definir OpcionServicio Como Entero;
+	
+	Escribir "Bienvenido al Taller de Motos el Maquinista";
+	Escribir "¿Que servicio desea?";
+	Escribir "1. Registrar ingreso de Motocicleta";
+	Escribir "2. Registrar salida de Motocicleta";
+	Leer OpcionServicio;
+	
+	Limpiar Pantalla;
+	Segun OpcionServicio Hacer
+		1:
+			IngresoMoto();
+			
+		2:
+			SalidaMoto();
+			
+		De Otro Modo:
+			
+			Escribir "Elija una opcion valida";
+			
+	FinSegun
+FinProceso

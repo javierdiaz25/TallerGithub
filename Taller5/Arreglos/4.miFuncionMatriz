@@ -1,0 +1,60 @@
+SubProceso llenarMatriz(matriz,f,c,j)
+	Para f <- 0 Hasta 3 Con Paso 1 Hacer
+		Si f = 1 O f = 3 Entonces
+			Para c <- 4 Hasta 0 Con Paso -1 Hacer
+				matriz[f,c] <- j;
+				j<-j+1;
+			FinPara
+		SiNo
+			Para c <- 0 Hasta 4 Con Paso 1 Hacer
+				matriz[f,c] <- j;
+				j <- j +1;
+			FinPara
+		FinSi
+	FinPara
+FinSubProceso
+
+SubProceso imprimirMatriz(matriz,f,c)
+	para f <-0 Hasta 3 con paso 1 Hacer
+		para c<-0 hasta 4 Con Paso 1 Hacer
+			Escribir matriz[f,c], " " Sin Saltar;
+		FinPara
+		Escribir "";
+	FinPara
+FinSubProceso
+
+SubProceso quemarCodigo(matriz, f, c)
+	
+	Definir g Como Entero;
+	g<-1;
+	para f <- 0 Hasta 3 con paso 1 Hacer
+		para c<- 0 hasta 4 Con Paso 1 Hacer
+			Escribir g, " " Sin Saltar;
+			g <- g+1;
+		FinPara
+		Escribir "";
+		
+	FinPara
+FinSubProceso
+
+Proceso miFuncionMatriz
+	Definir fila, columna, matriz1, i, j, a Como Entero;
+	Dimension matriz1[4,5];
+	
+	i<-1;
+	fila <- 0;
+	columna <- 0;
+	
+	quemarCodigo(matriz1, fila, columna);
+	
+	Escribir "";
+	
+	llenarMatriz(matriz1, fila, columna, i);
+	
+	Escribir "Presione enter para imprimir";
+	Leer a;
+	
+	imprimirMatriz(matriz1, fila, columna);
+
+	
+FinProceso

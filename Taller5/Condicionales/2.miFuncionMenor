@@ -1,0 +1,16 @@
+SubProceso resultado <- edadPersonaMenor()
+	Escribir "Usted aun es un niño(a)";	
+FinSubProceso
+
+Proceso miFuncionMenor
+	
+	Definir EdadPersona Como Entero;
+	
+	Escribir "Ingrese la edad de la persona";
+	Leer EdadPersona;
+	
+	Si EdadPersona<18 Entonces
+		Escribir edadPersonaMenor();
+	FinSi
+	
+FinProceso

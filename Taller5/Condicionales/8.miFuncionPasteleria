@@ -1,0 +1,91 @@
+SubProceso DecoracionTorta (Torta1, DecoracionAdicional,Decoracion, NombreCliente, nombreTorta)
+	
+	Definir Cantidad, ValorTorta como entero;
+	
+	
+	Escribir "Cuantas Cantidades desea?";
+	Leer Cantidad;
+	
+	ValorTorta <- Cantidad * (Torta1 + DecoracionAdicional);
+	
+	Si Decoracion = Falso Entonces
+		Escribir "El pedido de ", NombreCliente, " es:";
+		Escribir Cantidad, " Tortas de ", nombreTorta, " Sin Decoración ";
+		Escribir  "El valor a cancelar es de: ", ValorTorta;
+	SiNo
+		Escribir "El pedido de ", NombreCliente, " es:";
+		Escribir Cantidad, " Tortas de ", nombreTorta, " con Decoración ";
+		Escribir  "El valor a cancelar es de: ", ValorTorta;
+	FinSi
+	
+FinSubProceso
+
+SubProceso saboresTorta (NombreCliente, Torta1, nombreTorta)
+	
+	Definir Decoracion Como Logico;
+	Definir DecoracionAdicional, OpcionDecoracion Como Entero;
+	
+	Escribir "Desea alguna decoracion?";
+	Leer Decoracion;
+	
+	Si Decoracion = Verdadero Entonces
+		
+		Escribir "Elija la Decoracion";
+		Escribir "1, Grajeas de Colores - $5000";
+		Escribir "2. Salsa de Frutos Rojos - $7000";
+		Leer OpcionDecoracion;
+		
+		Segun OpcionDecoracion Hacer
+			1:
+				DecoracionAdicional <- 5000;
+				DecoracionTorta(DecoracionAdicional, Torta1,Decoracion, NombreCliente, nombreTorta);
+				
+			2:
+				DecoracionAdicional <- 7000;
+				DecoracionTorta(DecoracionAdicional, Torta1, Decoracion, NombreCliente, nombreTorta);
+				
+		FinSegun
+	SiNo
+		DecoracionAdicional <- 0;
+		DecoracionTorta(DecoracionAdicional, Torta1,Decoracion, NombreCliente, nombreTorta);
+	FinSi
+	
+FinSubProceso
+
+Proceso Pasteleria
+	
+	Definir NombreCliente, nombreTorta Como Caracter;
+	Definir OpcionTorta, Torta1 Como Entero;
+	
+	
+	Escribir "Bienvenido a la Pasterleria de Don carlos";
+	
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCliente;
+	
+	Limpiar Pantalla;
+	
+	Escribir "A continuacion mostraremos las Tortas Disponibles";
+	Escribir "1, Torta Maria Luisa - $30000";
+	Escribir "2. Torta de Nucita - $35000";
+	Escribir "3. Torta de Yogourt - $40000";
+	Leer OpcionTorta;
+	
+	Segun OpcionTorta Hacer
+		1:
+			Torta1 <- 30000;
+			nombreTorta <- "Maria Luisa";
+			saboresTorta(NombreCliente, Torta1, nombreTorta);
+			
+		2:
+			Torta1 <- 35000;
+			nombreTorta <- "Nucita";
+			saboresTorta(NombreCliente, Torta1, nombreTorta);
+			
+		3:
+			Torta1 <- 40000;
+			nombreTorta <- "Yogourt";
+			saboresTorta(NombreCliente, Torta1, nombreTorta);
+	FinSegun
+	
+FinProceso

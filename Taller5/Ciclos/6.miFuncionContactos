@@ -1,0 +1,267 @@
+SubProceso eliminarContacto (numEliminar, nom1, nom2, nom3, org1, org2, org3, num1, num2, num3, uPermitido)
+	
+	Definir opcionBorrar Como entero;
+	
+	Si numEliminar <> num1 y numEliminar <> num2 y numEliminar <> num3 Entonces
+		
+		Repetir
+			Escribir "Este Numero no existe, por favor ingrese otro numero";
+			Leer NumEliminar;
+			
+		Hasta Que NumEliminar = num1 o NumEliminar = num2 o NumEliminar = num3
+	
+	FinSi
+	
+	Si NumEliminar = num1 Entonces
+		
+		Escribir "El contacto ha sido eliminado correctamente";
+		Escribir "";
+		Escribir "usuario 1";
+		Escribir "NOMBRE: ", nom1;
+		Escribir "NUMERO TELEFONICO: ", num1;
+		Escribir "ORGANIZACION: ", org1;
+		
+	FinSi
+	
+	Si NumEliminar = num2 Entonces
+		
+		Escribir "El contacto ha sido eliminado correctamente";
+		Escribir "";
+		Escribir "usuario 2";
+		Escribir "NOMBRE: ",nom2;
+		Escribir "NUMERO TELEFONICO: ", num2;
+		Escribir "ORGANIZACION: ", org2;
+		
+	FinSi
+	
+	Si NumEliminar = num3 Entonces
+		
+		Escribir "El contacto ha sido eliminado correctamente";
+		Escribir "";
+		Escribir "usuario 3";
+		Escribir "NOMBRE: ",nom3;
+		Escribir "NUMERO TELEFONICO: ", num3;
+		Escribir "ORGANIZACION: ", org3;
+		
+	FinSi
+FinSubProceso
+
+SubProceso mostrarContactos (NombreCompleto1, NombreCompleto2, NombreCompleto3,NumeroCel1, NumeroCel2, NumeroCel3, Organizacion1, Organizacion2, Organizacion3)
+	
+	Escribir "Los contactos registrados son los siguientes";
+	Escribir "";
+	Escribir "usuario 1";
+	Escribir "NOMBRE: ", NombreCompleto1;
+	Escribir "NUMERO TELEFONICO: ",NumeroCel1;
+	Escribir "ORGANIZACION: ", Organizacion1;
+	Escribir "";
+	Escribir "usuario 2";
+	Escribir "NOMBRE: ", NombreCompleto2;
+	Escribir "NUMERO TELEFONICO: ", NumeroCel2;
+	Escribir "ORGANIZACION: ", Organizacion2;
+	Escribir "";
+	Escribir "usuario 3";
+	Escribir "NOMBRE: ", NombreCompleto3;
+	Escribir "NUMERO TELEFONICO: ", NumeroCel3;
+	Escribir "ORGANIZACION: ", Organizacion3;
+	Escribir "";
+FinSubProceso
+
+SubProceso result <- condicionNumero (a,b,c,i)
+	
+	Definir result Como Entero;
+	
+	Si i = 1 Entonces
+		Mientras a = b O a = c  Hacer
+			
+			Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+			Leer a;
+			
+		FinMientras
+		result <- a;
+	FinSi
+	
+	si	i=2 Entonces
+		Mientras a = b O b = c  Hacer
+			
+			Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+			Leer b;
+			
+		FinMientras
+		result <- b;
+	FinSi
+	
+	si	i=3 Entonces
+		Mientras a = c O b = c  Hacer
+			
+			Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+			Leer c;
+			
+		FinMientras
+		result <- c;
+	FinSi
+	
+FinSubProceso
+
+SubProceso  datoNombre <- capturarNombre(nombre)
+	
+	Definir datoNombre Como Caracter;
+	
+	Escribir "Ingrese nombre completo";
+	Leer datoNombre;
+	
+FinSubProceso
+
+SubProceso  datoOrganizacion <- capturarOrganizacion(Organizacion)
+	
+	Definir datoOrganizacion Como Caracter;
+	
+	Escribir "Ingrese Organizacion";
+	Leer datoOrganizacion;
+	
+FinSubProceso
+
+SubProceso  datoCel<- capturarNumero(numeroCel)
+	
+	Definir datoCel Como Entero;
+	
+	Escribir "Ingrese Numero Telefonico";
+	Leer datoCel;
+	
+FinSubProceso
+
+Proceso Contactos
+	
+	Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, Organizacion1, Organizacion2, Organizacion3 Como Caracter;
+	Definir Numerocel1, Numerocel2, Numerocel3, NumeroEliminar, Opcion, i, usuarioPermitido Como Entero;
+	Definir Respuesta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 3;
+	NombreCompleto1 <- "";
+	NombreCompleto2 <- "";
+	NombreCompleto3 <- "";
+	Organizacion1 <- "";
+	Organizacion2 <- "";
+	Organizacion3 <- "";
+	NumeroCel1 <- 0;
+	NumeroCel2 <- 0;
+	NumeroCel3 <- 0;
+	
+	Mientras Opcion <= 3 Hacer
+		Escribir "Bienvenido, A continuacion elija una opcion";
+		Escribir "1. Crear contacto";
+		Escribir "2. Ver contactos registrados";
+		Escribir "3. Eliminar Contactos";
+		Escribir "4. Salir";
+		Leer Opcion;
+		
+		Segun Opcion Hacer
+			1:
+				Para i <- 1 hasta usuarioPermitido con paso 1 Hacer
+					Escribir "usuarios permitidos: ", usuarioPermitido;
+					
+					Si i = 1 Y NumeroCel1 = 0 Entonces
+						NombreCompleto1 <- capturarNombre(1);
+						
+						NumeroCel1 <- condicionNumero(capturarNumero(1), NumeroCel2, NumeroCel3,i);
+						
+						Organizacion1 <- capturarOrganizacion(1);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 4;
+							
+						FinSi
+					FinSi
+					
+					Si i = 2 Y NumeroCel2 = 0 Entonces
+						NombreCompleto2 <- capturarNombre(2);
+						
+						NumeroCel2 <- condicionNumero(NumeroCel1, capturarNumero(2), NumeroCel3,i);
+						
+						Organizacion2 <- capturarOrganizacion(2);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						
+						Escribir "Desea crear otro contacto";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							
+							i <- 4;
+							
+						FinSi
+					FinSi
+					
+					Si i = 3 Y NumeroCel3 = 0 Entonces
+						NombreCompleto3 <- capturarNombre(3);
+						
+						NumeroCel3 <- condicionNumero(NumeroCel1, NumeroCel2, capturarNumero(3),i);
+						
+						Organizacion3 <- capturarOrganizacion(3);
+						
+						Escribir "Contacto ", i, " guardado satisfactoriamente";
+						
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Si usuarioPermitido = 0 entonces 
+							
+							Escribir "No se pueden registrar mas usuarios";
+							
+						FinSi
+					FinSi
+					Escribir "";
+				FinPara
+				
+			2:
+				mostrarContactos(NombreCompleto1, NombreCompleto2, NombreCompleto3,NumeroCel1, NumeroCel2, NumeroCel3, Organizacion1, Organizacion2, Organizacion3);
+				
+			3:
+				Escribir "Por favor ingrese el numero telefonico a eliminar";
+				Leer NumeroEliminar;
+				
+				eliminarContacto(NumeroEliminar, NombreCompleto1, NombreCompleto2, NombreCompleto3, Organizacion1, Organizacion2, Organizacion3, numeroCel1, NumeroCel2, NumeroCel3, usuarioPermitido);
+				
+				si NumeroEliminar = NumeroCel1 Entonces
+					NumeroCel1 <- 0;
+					NombreCompleto1 <- "";
+					Organizacion1 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				si NumeroEliminar = NumeroCel2 Entonces
+					NumeroCel2 <- 0;
+					NombreCompleto2 <- "";
+					Organizacion2 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				si NumeroEliminar = NumeroCel3 Entonces
+					NumeroCel3 <- 0;
+					NombreCompleto3 <- "";
+					Organizacion3 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+		FinSegun
+		
+	FinMientras
+
+	
+FinProceso
+	

@@ -1,0 +1,164 @@
+SubProceso ValorDevolucion <- totalDevolucion ( CantidadDevolucion, precio )
+	
+	Definir ValorDevolucion Como Entero;
+	
+	ValorDevolucion <- precio * CantidadDevolucion;
+	
+	
+FinSubProceso
+
+SubProceso devolverProducto ( )
+	
+	Definir Devolucion Como Entero;
+	
+	Escribir "¿Que Pruducto desea devolver?";
+	Escribir "1. Vitamina C";
+	Escribir "2. Acetaminofen";
+	Escribir "3. Pañales etapa 5";
+	Escribir "4. Jabon";
+	Leer Devolucion;
+	
+	Segun Devolucion Hacer
+		1:
+			Definir CantidadDevolucion, precio Como Entero;
+			
+			Escribir "¿Cuantos Sobres va a devolver?";
+			Leer CantidadDevolucion;
+			
+			precio <- 3500;
+			Escribir "Le devuelvo ", totalDevolucion(CantidadDevolucion, precio);
+			
+		2:
+			Definir CantidadDevolucion, precio Como Entero;
+			
+			Escribir "¿Cuantos tabletas va a devolver?";
+			Leer CantidadDevolucion;
+			
+			precio <- 1500;
+			Escribir "Le devuelvo ", totalDevolucion(CantidadDevolucion, precio);
+			
+		3:
+			Definir CantidadDevolucion, precio Como Entero;
+			
+			Escribir "¿Cuantos pañales va a devolver?";
+			Leer CantidadDevolucion;
+			
+			precio <- 2500;
+			Escribir "Le devuelvo ", totalDevolucion(CantidadDevolucion, precio);
+			
+		4:
+			Definir CantidadDevolucion, precio Como Entero;
+			
+			Escribir "¿Cuantos jabones va a devolver?";
+			Leer CantidadDevolucion;
+			
+			precio <- 3000;
+			Escribir "Le devuelvo ", totalDevolucion(CantidadDevolucion, precio);
+			
+	FinSegun
+	
+FinSubProceso
+
+SubProceso ventaProducto ( Respuesta, precio )
+	
+	Definir ValorVenta, Cantidad Como entero;
+	
+	Si Respuesta = Verdadero Entonces
+		Escribir "¿Cuantos va a llevar?";
+		Leer Cantidad;
+		
+		ValorVenta <- precio * Cantidad;
+		
+		Escribir "El valor de su factura es de:" , ValorVenta;
+		escribir "Gracias por su compra";
+		
+	SiNo
+		Escribir "Bueno, con mucho gusto";
+	FinSi
+	
+FinSubProceso
+
+SubProceso consultarProductos ()
+	
+	Definir OpcionProducto, precio Como Entero;
+	Definir Respuesta Como Logico;
+	
+	Escribir "¿Que Pruducto desea llevar?";
+	Escribir "1. Vitamina C";
+	Escribir "2. Acetaminofen";
+	Escribir "3. Pañales etapa 5";
+	Escribir "4. Jabon";
+	Leer OpcionProducto;
+	
+	Segun OpcionProducto Hacer
+		1:
+			Escribir "El valor del sobre de Vitamina C es de $3.500";
+			Escribir "¿Lo va a llevar?";
+			Leer Respuesta;
+			precio <- 3500;
+			
+			ventaProducto(Respuesta, precio);
+			
+		2:
+			Escribir "El valor de la tableta por 10 unidades de Acetaminofen es de $1500";
+			Escribir "¿Lo va a llevar?";
+			Leer Respuesta;
+			precio <- 1500;
+			
+			ventaProducto(Respuesta,precio);
+			
+		3:
+			Escribir "El valor de cada pañal etapa 5 es de $2500";
+			Escribir "¿Lo va a llevar?";
+			Leer Respuesta;
+			precio <- 2500;
+			
+			ventaProducto(Respuesta,precio);
+			
+		4:
+			Escribir "El valor de cada jabon es de $3000";
+			Escribir "¿Lo va a llevar?";
+			Leer Respuesta;
+			precio <- 3000;
+			
+			ventaProducto(Respuesta,precio);
+			
+		De Otro Modo:
+			
+			Escribir "Elija otra opcion";
+			
+	FinSegun
+	
+FinSubProceso
+
+Proceso drogueria
+	
+	Definir NombreCliente Como Caracter;
+	Definir OpcionConsulta Como Entero;
+	
+	Escribir "Bienvenido a La Drogueria Mi Salud, Por favor ingrese sus datos";
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCliente;
+	
+	Limpiar Pantalla;
+	
+	Escribir "¿Que desea hacer?";
+	Escribir "1. Consultar Pruductos Disponibles";
+	Escribir "2. Devolver Producto";
+	Leer OpcionConsulta;
+	
+	Limpiar Pantalla;
+	
+	Segun OpcionConsulta Hacer
+		1:
+			consultarProductos();
+			
+		2:
+			devolverProducto();
+			
+		De Otro Modo:
+			Escribir "Elija otra opcion";
+	FinSegun
+	
+	
+FinProceso

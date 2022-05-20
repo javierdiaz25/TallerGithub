@@ -1,0 +1,57 @@
+SubProceso Arreglo ( posicion, j)
+	Para j <- 0 Hasta 19 Con Paso 1 Hacer
+		posicion[j] <- Aleatorio(1,100);
+		Escribir posicion[j];
+		
+	FinPara
+FinSubProceso
+
+SubProceso ImprimirArreglo (posicion, j)
+	Escribir "Numeros pares: ", Sin Saltar;
+	
+	Mientras j <= 19 Hacer
+		
+		Si posicion[j] MOD 2 = 0 Entonces
+			
+			Escribir posicion[j], " , ", Sin Saltar;
+			
+		FinSi
+		
+		j <- j+1;
+		
+	FinMientras
+	
+	j <- 0;
+	
+	Escribir "";
+	Escribir "Numeros impares: " Sin Saltar;
+	
+	Mientras j <= 19 Hacer
+		
+		Si posicion[j] MOD 2 = 1 Entonces
+			
+			Escribir posicion[j], " , ", Sin Saltar;
+			
+		FinSi
+		
+		j <- j+1;
+		
+	FinMientras
+	
+	Escribir "";
+FinSubProceso
+
+Proceso miFuncionParesImpares
+	Definir posiciones, i Como Entero;	
+	Dimension posiciones[20];
+	
+	i<- 0;
+	
+	Arreglo(posiciones, i);
+	
+	ImprimirArreglo(posiciones, i);
+	
+	
+	
+	
+FinProceso

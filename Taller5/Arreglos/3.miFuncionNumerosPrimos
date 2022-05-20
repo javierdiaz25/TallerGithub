@@ -1,0 +1,43 @@
+SubProceso imprimirArreglo ( posicion, j, k, l )
+	para j <- 0 Hasta 999 Con Paso 1 Hacer
+		
+		posicion[j] <- j+1;
+		k <- 1;
+		l <- 0;
+		
+		Mientras k <= posicion[j] Hacer
+			
+			si posicion[j] mod k = 0 Entonces
+				
+				l <- l+1;
+				
+			FinSi
+			
+			k<-k+1;
+			
+		FinMientras
+		
+		si l = 2 Entonces
+			Escribir "el numero ", posicion[j], " es primo";
+		FinSi
+		
+	FinPara
+	
+	
+	
+	Si k = 2 Entonces
+		Escribir "El numero ", posicion[j], " es primo";
+	FinSi
+FinSubProceso
+
+Proceso miFuncionNumerosPrimos
+	Definir posiciones, i, j, k Como Entero;	
+	Dimension posiciones[1000];
+	
+	i <- 0;
+	j <- 1;
+	k <- 0;
+	
+	imprimirArreglo(posiciones, i, j, k);
+	
+FinProceso

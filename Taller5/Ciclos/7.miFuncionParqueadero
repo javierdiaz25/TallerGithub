@@ -1,0 +1,366 @@
+SubProceso resulConsultar <- consultarVehiculo ( consultaPlaca, placa1, placa2, placa3, placa4, placa5)
+	
+	Definir resulConsultar Como Caracter;
+	
+	Si consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5 Entonces
+		
+		resulConsultar <- "El vehiculo se encuentra en el parqueadero";
+		
+	SiNo
+		Repetir
+			
+			Escribir "Este vehiculo no se encuentra en el parqueadero, por favor ingrese otro numero de placa";
+			Leer consultaPlaca;
+			
+		Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+		
+		resulConsultar <- "El vehiculo se encuentra en el parqueadero";
+		
+	FinSi	
+	
+FinSubProceso
+
+SubProceso resultadoPlaca <- condicionPlaca ( pl1,pl2,pl3,pl4,pl5,i )
+	
+	Definir resultadoPlaca Como Caracter;
+	
+	Si i = 1 Entonces
+		Mientras pl1 = pl2 O pl1 = pl3 o pl1 = pl4 o pl1 = pl5  Hacer
+			Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+			Leer pl1;
+		FinMientras
+		resultadoPlaca <- pl1;
+	FinSi
+	
+	Si i = 2 Entonces
+		Mientras pl1 = pl2 O pl2 = pl3 o pl2 = pl4 o pl2 = pl5  Hacer
+			Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+			Leer pl2;
+		FinMientras
+		resultadoPlaca <- pl2;
+	FinSi
+	
+	Si i = 3 Entonces
+		Mientras pl3 = pl1 O pl2 = pl3 o pl3 = pl4 o pl3 = pl5  Hacer
+			Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+			Leer pl3;
+		FinMientras
+		resultadoPlaca <- pl3;
+	FinSi
+	
+	Si i = 4 Entonces
+		Mientras pl4 = pl2 O pl4 = pl3 o pl1 = pl4 o pl4 = pl5  Hacer
+			Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+			Leer pl4;
+		FinMientras
+		resultadoPlaca <- pl4;
+	FinSi
+	
+	Si i = 5 Entonces
+		Mientras pl1 = pl5 O pl2 = pl5 o pl3 = pl5 o pl4 = pl5  Hacer
+			Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+			Leer pl5;
+		FinMientras
+		resultadoPlaca <- pl5;
+	FinSi
+	
+FinSubProceso
+
+SubProceso  datoNombre <- capturarNombre(nom)
+	
+	Definir datoNombre Como Caracter;
+	
+	Escribir "Ingrese nombre completo";
+	Leer datoNombre;
+	
+FinSubProceso
+
+SubProceso  datoPlaca <- capturarPlaca(pla)
+	
+	Definir datoPlaca Como Caracter;
+	
+	Escribir "Ingrese Placa del vehiculo";
+	Leer datoPlaca;
+	
+FinSubProceso
+
+SubProceso  datoMarca <- capturarMarca(mar)
+	
+	Definir datoMarca Como Caracter;
+	
+	Escribir "Ingrese Marca del vehiculo";
+	Leer datoMarca;
+	
+FinSubProceso
+
+SubProceso  datoCel<- capturarNumero(num)
+	
+	Definir datoCel Como Entero;
+	
+	Escribir "Ingrese Numero Telefonico";
+	Leer datoCel;
+	
+FinSubProceso
+
+Proceso miFuncionParqueadero
+	Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, NombreCompleto4, NombreCompleto5, placa1, placa2, placa3, placa4, placa5, marca1, marca2, marca3, marca4, marca5, consultaPlaca Como Caracter;
+	Definir NumeroCel1, NumeroCel2, NumeroCel3, NumeroCel4, NumeroCel5, NumeroEliminar, Opcion, i, usuarioPermitido, OpcionEliminar Como Entero;
+	Definir Respuesta Como Logico;
+	
+	Opcion <- 1;
+	usuarioPermitido <- 5;
+	NombreCompleto1 <- "";
+	NombreCompleto2 <- "";
+	NombreCompleto3 <- "";
+	NombreCompleto4 <- "";
+	NombreCompleto5 <- "";
+	placa1 <- "";
+	placa2 <- "";
+	placa3 <- "";
+	placa4 <- "";
+	placa5 <- "";
+	marca1 <- "";
+	marca2 <- "";
+	marca3 <- "";
+	marca4 <- "";
+	marca5 <- "";
+	consultaPlaca <- "";
+	numeroCel1 <- 0;
+	numeroCel2 <- 0;
+	numeroCel3 <- 0;
+	numeroCel4 <- 0;
+	numeroCel5 <- 0;
+	
+	Mientras Opcion <= 3 Hacer
+		
+		Escribir "";
+		Escribir "Bienvenido, A continuacion elija una opcion";
+		
+		Escribir "1. Ingresar Vehiculo";
+		Escribir "2. Consultar Vehiculo";
+		Escribir "3. Retirar Vehiculo";
+		Escribir "4. Salir";
+		Leer Opcion;
+		segun Opcion Hacer
+			1:
+				Para i<-1 Hasta usuarioPermitido Hacer
+					Escribir "Usuarios disponibles ", usuarioPermitido;
+					
+					Si i = 1 Y placa1 = "" Entonces
+						
+						placa1 <- condicionPlaca(capturarPlaca(1),placa2,placa3,placa4,placa5,i);
+						marca1 <- capturarMarca(1);
+						nombreCompleto1 <- capturarNombre(1);
+						numeroCel1 <- capturarNumero(1);
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							i <- usuarioPermitido+2;
+						FinSi
+						Limpiar Pantalla;
+					FinSi
+					
+					Si i = 2 Y placa2 = "" Entonces
+						placa1 <- condicionPlaca(placa1,capturarPlaca(2),placa3,placa4,placa5,i);
+						marca1 <- capturarMarca(2);
+						nombreCompleto1 <- capturarNombre(2);
+						numeroCel1 <- capturarNumero(2);
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							i <- usuarioPermitido+2;
+						FinSi
+						Limpiar Pantalla;
+					FinSi
+					
+					Si i = 3 Y placa3 = "" Entonces
+						placa1 <- condicionPlaca(placa1,placa2,capturarPlaca(3),placa4,placa5,i);
+						marca1 <- capturarMarca(3);
+						nombreCompleto1 <- capturarNombre(3);
+						numeroCel1 <- capturarNumero(3);
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							i <- 6;
+						FinSi
+						
+						Limpiar Pantalla;
+					FinSi
+					
+					Si i = 4 Y placa4 = "" Entonces
+						placa1 <- condicionPlaca(placa1,placa2,placa3,capturarPlaca(4),placa5,i);
+						marca1 <- capturarMarca(4);
+						nombreCompleto1 <- capturarNombre(4);
+						numeroCel1 <- capturarNumero(4);
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+						Escribir "Desea ingresar otro vehiculo";
+						Leer Respuesta;
+						
+						Si Respuesta = Falso entonces 
+							i <- 6;
+						FinSi
+						Limpiar Pantalla;
+					FinSi
+					
+					Si i = 5 Y placa5 = "" Entonces
+						placa1 <- condicionPlaca(placa1,placa2,placa3,placa4,capturarPlaca(5),i);
+						marca1 <- capturarMarca(5);
+						nombreCompleto1 <- capturarNombre(5);
+						numeroCel1 <- capturarNumero(5);
+						
+						Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+						usuarioPermitido <- usuarioPermitido - 1;
+						
+					FinSi
+					
+					Si usuarioPermitido = 0 Entonces
+						
+						Escribir "Parqueadero lleno";
+						
+					FinSi
+					Limpiar Pantalla;
+				FinPara
+				
+			2:
+				Limpiar Pantalla;
+				Escribir "Ingrese Placa del vehiculo a consultar (Sin guion y en mayusculas)";
+				Leer consultaPlaca;
+				
+				Escribir consultarVehiculo(consultaPlaca, placa1, placa2, placa3, placa4, placa5);
+				
+			3:
+				Escribir "Ingrese Placa del vehiculo a retirar (Sin guion y en mayusculas)";
+				Leer consultaPlaca;
+				
+				Si consultaPlaca <> placa1 y consultaPlaca <> placa2 y consultaPlaca <> placa3 y consultaPlaca <> placa4 y consultaPlaca <> placa5 Entonces
+					
+					Repetir
+						
+						Escribir "Este vehiculo no se encuentra en el parqueadero, por favor ingrese otro numero de placa";
+						Leer consultaPlaca;
+						
+					Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+				FinSi
+				
+				Si consultaPlaca = placa1 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 1";
+					Escribir "PLACA ", placa1;
+					Escribir "NOMBRE: ", NombreCompleto1;
+					
+					
+					NumeroCel1 <- 0;
+					NombreCompleto1 <- "";
+					placa1 <- "";
+					marca1 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa2 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 2";
+					Escribir "PLACA ", placa2;
+					Escribir "NOMBRE: ", NombreCompleto2;
+					
+					
+					NumeroCel2 <- 0;
+					NombreCompleto2 <- "";
+					placa2 <- "";
+					marca2 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa3 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 3";
+					Escribir "PLACA ", placa3;
+					Escribir "NOMBRE: ", NombreCompleto3;
+					
+					
+					NumeroCel3 <- 0;
+					NombreCompleto3 <- "";
+					placa3 <- "";
+					marca3 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa4 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 4";
+					Escribir "PLACA ", placa4;
+					Escribir "NOMBRE: ", NombreCompleto4;
+					
+					
+					NumeroCel4 <- 0;
+					NombreCompleto4 <- "";
+					placa4 <- "";
+					marca4 <- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+				Si consultaPlaca = placa5 Entonces
+					
+					Escribir "El Vehiculo ha salido del parqueadero";
+					Escribir "";
+					Escribir "usuario 5";
+					Escribir "PLACA ", placa5;
+					Escribir "NOMBRE: ", NombreCompleto5;
+					
+					
+					NumeroCel5 <- 0;
+					NombreCompleto5 <- "";
+					placa5 <- "";
+					marca15<- "";
+					usuarioPermitido <- usuarioPermitido + 1;
+					
+				FinSi
+				
+			4:
+				Escribir "Hasta luego";
+				Opcion <- 4;
+			De Otro Modo:
+				
+				Mientras  Opcion >4 Hacer
+					
+					Escribir  "";
+					Escribir "Elija una opcion valida";
+					Opcion <- 1;
+					
+				FinMientras
+				
+		FinSegun
+		
+		
+	FinMientras
+	
+FinProceso

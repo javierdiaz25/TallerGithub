@@ -1,0 +1,26 @@
+SubProceso Arreglo ( posicion, j)
+	para j <- 0 Hasta 4 Con Paso 1 Hacer
+		Escribir "Ingrese posicion ", j;
+		Leer posicion[j];
+	FinPara
+FinSubProceso
+
+SubProceso ImprimirArreglo (posicion, j)
+	Para j <- 0 Hasta 4 Con Paso 1 Hacer
+		Escribir  "[", j, "] = ", posicion[j];
+	FinPara
+FinSubProceso
+
+Proceso miFuncionVector
+	Definir posiciones, i Como Entero;	
+	Dimension posiciones[5];
+	
+	i<- 0;
+	
+	Arreglo(posiciones, i);
+	
+	Limpiar Pantalla;
+	
+	ImprimirArreglo(posiciones, i);
+	
+FinProceso

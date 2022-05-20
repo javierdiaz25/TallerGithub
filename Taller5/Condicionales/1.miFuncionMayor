@@ -1,0 +1,16 @@
+SubProceso resultado <- edadPersonaMayor()
+	Escribir 'Usted es mayor de edad';
+FinSubProceso
+
+Proceso miFuncionMayor
+	
+	Definir EdadPersona Como Entero;
+	
+	Escribir 'Ingrese la edad de la persona';
+	Leer EdadPersona;
+	
+	Si EdadPersona>=18 Entonces
+		Escribir edadPersonaMayor();
+	FinSi
+	
+FinProceso
